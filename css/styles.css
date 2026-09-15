@@ -9,3 +9,8 @@ label
 	width:150px;
 }
 
+/* Le message d'erreur se place à côté du champ, en rouge. */
+.erreur {
+	color: #c00000;
+	margin-left: 8px;
+}
