@@ -1,47 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8">
-	<title>Formulaire de contact</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<script defer src="js/validation.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Un formulaire de contact validé en JavaScript : chaque champ reçoit son message, rien ne part tant qu'il reste une erreur.">
+  <title>Accueil - Formulaire de contact</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/validation.js"></script>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">Formulaire de contact</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Afficher le menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+          <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item"><a class="nav-link text-dark" href="#">Formulaire</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#regles">Règles</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <main class="pb-3">
+      <div class="text-center">
+        <h1 class="display-4">Formulaire de contact</h1>
+        <p>Chaque champ est vérifié au moment de l'envoi, et rien ne part tant qu'il reste une erreur.</p>
+      </div>
 
-<form id="monForm" method="get" action="ok.html" novalidate>
-	<div>
-		<label for="txtNom">Nom: </label>
-		<input type="text" name="txtNom" id="txtNom">
-		<span id="erreur-txtNom" class="erreur" aria-live="polite"></span>
-	</div>
-	<div>
-		<label for="txtPrenom">Prénom: </label>
-		<input type="text" name="txtPrenom" id="txtPrenom">
-		<span id="erreur-txtPrenom" class="erreur" aria-live="polite"></span>
-	</div>
-	<div>
-		<label for="txtTelephone">Téléphone: </label>
-		<input type="tel" name="txtTelephone" id="txtTelephone">
-		<span id="erreur-txtTelephone" class="erreur" aria-live="polite"></span>
-	</div>
-	<div>
-		<label for="lstPays">Pays : </label>
-		<select id="lstPays" name="lstProvinces">
-			<option value="can" >Canada</option>
-			<option value="usa" >États-Unis</option>
-		</select>
-	</div>
-	<div>	
-		<label for="txtCourriel">Courriel : </label>
-		<input type="email" name="txtCourriel" id="txtCourriel">
-		<span id="erreur-txtCourriel" class="erreur" aria-live="polite"></span>
-	</div>
-	<div>	
-		<label for="chkInfos">Je désire obtenir des informations par courriel : </label>
-		<input type="checkbox" name="chkInfos" id="chkInfos">
-	</div>
-	
-	<input type="submit" value="Envoyer">
-</form>
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <form id="monForm" method="get" action="ok.html" novalidate>
+                <div class="mb-3">
+                  <label for="txtNom" class="form-label">Nom</label>
+                  <input type="text" class="form-control" name="txtNom" id="txtNom" autocomplete="family-name" aria-describedby="erreur-txtNom">
+                  <div id="erreur-txtNom" class="invalid-feedback" aria-live="polite"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="txtPrenom" class="form-label">Prénom</label>
+                  <input type="text" class="form-control" name="txtPrenom" id="txtPrenom" autocomplete="given-name" aria-describedby="erreur-txtPrenom">
+                  <div id="erreur-txtPrenom" class="invalid-feedback" aria-live="polite"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="txtTelephone" class="form-label">Téléphone</label>
+                  <input type="tel" class="form-control" name="txtTelephone" id="txtTelephone" placeholder="999-999-9999" autocomplete="tel" aria-describedby="erreur-txtTelephone">
+                  <div id="erreur-txtTelephone" class="invalid-feedback" aria-live="polite"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="lstPays" class="form-label">Pays</label>
+                  <select id="lstPays" name="lstPays" class="form-select" autocomplete="country">
+                    <option value="can">Canada</option>
+                    <option value="usa">États-Unis</option>
+                  </select>
+                </div>
+                <div class="form-check mb-3">
+                  <input type="checkbox" class="form-check-input" name="chkInfos" id="chkInfos">
+                  <label for="chkInfos" class="form-check-label">Je désire obtenir des informations par courriel</label>
+                </div>
+                <div class="mb-3">
+                  <label for="txtCourriel" class="form-label">Courriel</label>
+                  <input type="email" class="form-control" name="txtCourriel" id="txtCourriel" autocomplete="email" aria-describedby="erreur-txtCourriel">
+                  <div id="erreur-txtCourriel" class="invalid-feedback" aria-live="polite"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </form>
+            </div>
+          </div>
+
+          <h2 id="regles" class="h5 mt-4">Règles</h2>
+          <ul class="text-muted">
+            <li>Le nom et le prénom sont obligatoires.</li>
+            <li>Le téléphone s'écrit 999-999-9999 ou (999)999-9999.</li>
+            <li>Le courriel n'est demandé, et vérifié, que si la case est cochée.</li>
+            <li>Le formulaire ne part que lorsque tous les champs sont corrects.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="border-top footer text-muted">
+    <div class="container">
+      &copy; 2026 - Formulaire de contact - <a href="LICENSE">Licence</a>
+    </div>
+  </footer>
+
+  <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
