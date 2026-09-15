@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Formulaire de contact</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<form id="monForm" method="post" action="ok.html" >
+	<div>
+		<label for="txtNom">Nom: </label>
+		<input type="text" name="txtNom" id="txtNom" />
+	</div>
+	<div>
+		<label for="txtPrenom">Prénom: </label>
+		<input type="text" name="txtPrenom" id="txtPrenom" />
+	</div>
+	<div>
+		<label for="txtTelephone">Téléphone: </label>
+		<input type="tel" name="txtTelephone" id="txtTelephone" />
+	</div>
+	<div>
+		<label for="lstPays">Pays : </label>
+		<select id="lstPays" name="lstProvinces">
+			<option value="can" >Canada</option>
+			<option value="usa" >États-Unis</option>
+		</select>
+	</div>
+	<div>	
+		<label for="txtCourriel">Courriel : </label>
+		<input type="email" name="txtCourriel" id="txtCourriel" />
+	</div>
+	<div>	
+		<label for="chkInfos">Je désire obtenir des informations par courriel : </label>
+		<input type="checkbox" name="chkInfos" id="chkInfos" />
+	</div>
+	
+	<input type="submit" value="Envoyer">
+</form>
+</body>
+</html>
