@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
 	<title>Formulaire de contact</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<script defer src="js/validation.js"></script>
 </head>
 <body>
 
-<form id="monForm" method="post" action="ok.html" >
+<form id="monForm" method="get" action="ok.html" novalidate>
 	<div>
 		<label for="txtNom">Nom: </label>
-		<input type="text" name="txtNom" id="txtNom" />
+		<input type="text" name="txtNom" id="txtNom">
+		<span id="erreur-txtNom" class="erreur" aria-live="polite"></span>
 	</div>
 	<div>
 		<label for="txtPrenom">Prénom: </label>
-		<input type="text" name="txtPrenom" id="txtPrenom" />
+		<input type="text" name="txtPrenom" id="txtPrenom">
+		<span id="erreur-txtPrenom" class="erreur" aria-live="polite"></span>
 	</div>
 	<div>
 		<label for="txtTelephone">Téléphone: </label>
-		<input type="tel" name="txtTelephone" id="txtTelephone" />
+		<input type="tel" name="txtTelephone" id="txtTelephone">
+		<span id="erreur-txtTelephone" class="erreur" aria-live="polite"></span>
 	</div>
 	<div>
 		<label for="lstPays">Pays : </label>
@@ -29,11 +33,12 @@
 	</div>
 	<div>	
 		<label for="txtCourriel">Courriel : </label>
-		<input type="email" name="txtCourriel" id="txtCourriel" />
+		<input type="email" name="txtCourriel" id="txtCourriel">
+		<span id="erreur-txtCourriel" class="erreur" aria-live="polite"></span>
 	</div>
 	<div>	
 		<label for="chkInfos">Je désire obtenir des informations par courriel : </label>
-		<input type="checkbox" name="chkInfos" id="chkInfos" />
+		<input type="checkbox" name="chkInfos" id="chkInfos">
 	</div>
 	
 	<input type="submit" value="Envoyer">
