@@ -7,8 +7,6 @@ nothing is sent until every message is gone.
 One script, no JavaScript library, no build step: open the file and try to
 send it empty.
 
-> The user interface is in French, as is the code vocabulary. This README and
-> the repository metadata are in English.
 
 ## Screenshots
 
