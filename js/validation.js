@@ -47,6 +47,7 @@ function validerChamp(id) {
     const message = REGLES[id](refChamp.value);
 
     document.getElementById('erreur-' + id).textContent = message;
+    refChamp.classList.toggle('is-invalid', message !== '');
     return message === '';
 }
 
