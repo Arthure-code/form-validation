@@ -7,7 +7,6 @@ nothing is sent until every message is gone.
 One script, no JavaScript library, no build step: open the file and try to
 send it empty.
 
-
 ## Screenshots
 
 ![A white page titled Formulaire de contact. A Bootstrap card holds the form: Nom, Prénom, Téléphone, Pays, a checkbox Je désire obtenir des informations par courriel, and Courriel. The email field is outlined in red with the message Le courriel doit ressembler à nom@domaine.com underneath, above a blue Envoyer button. Below the card, a short list of rules](preview.png)
@@ -63,7 +62,6 @@ format. Le courriel n'est exigé, et vérifié, que si la case est cochée, et
 cocher ou décocher la case le revalide aussitôt. À l'envoi, chaque champ est
 validé, le premier fautif reçoit le focus et la soumission est bloquée tant
 qu'il reste un message ; corriger un champ en tapant efface son message.
-Interface et vocabulaire du code en français.
 
 ## Licence
 
